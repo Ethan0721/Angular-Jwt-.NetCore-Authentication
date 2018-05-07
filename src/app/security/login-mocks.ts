@@ -21,4 +21,4 @@ export const LOGIN_MOCKS : AppUserAuth [] = [
     canAddProducts : false,
     canAddCategory:false
 }
-]
+] 
