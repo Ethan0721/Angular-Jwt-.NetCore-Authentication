@@ -1,3 +1,4 @@
+import { AuthGuard } from './security/auth.guard';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
@@ -18,7 +19,9 @@ const routes: Routes = [
   },
   { 
     path: 'products', 
-    component: ProductListComponent
+    component: ProductListComponent,
+    canActivate:[AuthGuard],
+    data : {claimType:'canAccessProducts'}
   },
   { 
     path: 'productDetail/:id', 
@@ -26,7 +29,9 @@ const routes: Routes = [
   },
   {
     path: 'categories',
-    component: CategoryListComponent
+    component: CategoryListComponent,
+    canActivate:[AuthGuard],
+    data : {claimType:'canAccessCategories'}
   },
   {
     path: '', redirectTo: 'dashboard', pathMatch: 'full'

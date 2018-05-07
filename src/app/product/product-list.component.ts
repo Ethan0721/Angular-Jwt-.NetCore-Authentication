@@ -1,18 +1,23 @@
+import { AppUserAuth } from './../security/app-user-auth';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { Product } from './product';
 import { ProductService } from './product.service';
+import { SecurityService } from '../security/security.service';
 
 @Component({
   templateUrl: './product-list.component.html'
 })
 export class ProductListComponent implements OnInit {
   products: Product[];
+  securityObject : AppUserAuth = null;
 
   constructor(private productService: ProductService,
-    private router: Router) { }
-
+              private router: Router,
+              private _securityService : SecurityService) { 
+                this.securityObject = this._securityService.securityObject;
+              }
   ngOnInit() {
     this.getProducts();
   }

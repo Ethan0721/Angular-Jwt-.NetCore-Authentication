@@ -2,8 +2,8 @@ import { AppUserAuth } from './app-user-auth';
 
 export const LOGIN_MOCKS : AppUserAuth [] = [
 {
-    userName:"lll",
-    bearerToken : "abi393kdkd9393ikd",
+    userName:"jianzhao",
+    bearerToken : "aba",
     isAuthenticated:true,
     canAccessCategories:true,
     canAccessProducts:true,
@@ -20,5 +20,15 @@ export const LOGIN_MOCKS : AppUserAuth [] = [
     canSaveProduct:false,
     canAddProducts : false,
     canAddCategory:false
+},
+{
+    userName:"john",
+    bearerToken : "sa9f923k3kdmcjkhd",
+    isAuthenticated:true,
+    canAccessCategories:true,
+    canAccessProducts:true,
+    canSaveProduct:true,
+    canAddProducts : true,
+    canAddCategory:true
 }
 ] 
